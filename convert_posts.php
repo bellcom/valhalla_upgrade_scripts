@@ -44,6 +44,7 @@ if(empty($roles)){
         'type' => 'custom_type',
       ),
     );
+    field_create_instance($instance);
   }
 }
 else {
