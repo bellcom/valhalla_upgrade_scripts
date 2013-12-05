@@ -68,7 +68,9 @@ foreach($polling_stations as $node){
     $field_collection_item->setHostEntity('node', $node);
 
     if($node->field_party['da'][0]['tid'] == $volunteers['party']){
-      $volunteers['number_va'] = $volunteers['number_va'] - 1;
+      if($volunteers['number_va'] > 0){
+        $volunteers['number_va'] = $volunteers['number_va'] - 1;
+      }
 
       $field_collection_item->{$roles_array['VAF']}[LANGUAGE_NONE][1] = array('number_vo' => 1, 'meeting_time' => 2);
     }
